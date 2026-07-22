@@ -57,13 +57,26 @@ export default function WorkModal({ work, onClose }) {
           {work.type === 'document' && (
             <div className="modal-docs">
               {work.documents.map((doc, i) => (
-                <div key={i} className="modal-doc-item">
-                  <div className="modal-doc-icon">PDF</div>
+                <a
+                  key={i}
+                  href={doc.file || undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="modal-doc-item"
+                  style={{ textDecoration: 'none' }}
+                  onClick={(e) => {
+                    if (!doc.file) {
+                      e.preventDefault()
+                    }
+                  }}
+                >
+                  <div className="modal-doc-icon">{doc.file ? (doc.file.endsWith('.pptx') ? 'PPT' : 'PDF') : 'PDF'}</div>
                   <div className="modal-doc-info">
                     <div className="modal-doc-name">{doc.name}</div>
-                    <div className="modal-doc-cat">{doc.category}</div>
+                    <div className="modal-doc-cat">{doc.category}{doc.file ? ' · 点击查看' : ' · 文件整理中'}</div>
                   </div>
-                </div>
+                  <div className="modal-doc-arrow">↗</div>
+                </a>
               ))}
             </div>
           )}

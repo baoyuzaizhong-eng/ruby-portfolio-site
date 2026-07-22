@@ -1216,6 +1216,19 @@ ul { list-style: none; }
 .modal-doc-item:hover {
   border-color: var(--accent);
   transform: translateX(6px);
+  color: inherit;
+}
+.modal-doc-arrow {
+  margin-left: auto;
+  font-size: 1.2rem;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.3s var(--ease);
+}
+.modal-doc-item:hover .modal-doc-arrow {
+  opacity: 1;
+  transform: translateX(0);
 }
 .modal-doc-icon {
   width: 40px;
