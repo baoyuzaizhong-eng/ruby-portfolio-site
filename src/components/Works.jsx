@@ -57,7 +57,13 @@ export default function Works() {
               <div
                 key={work.id}
                 className={`works-slide ${isCurrent ? 'works-slide-active' : ''}`}
-                onClick={() => isCurrent ? setSelected(work) : setActive(i)}
+                onClick={() => {
+                  if (isCurrent) {
+                    setSelected(work)
+                  } else {
+                    setActive(i)
+                  }
+                }}
                 style={{
                   transform: `translateX(${offset * 55}%) rotateY(${angle}deg) translateZ(${translateZ}px) scale(${scale})`,
                   opacity,

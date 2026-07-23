@@ -149,7 +149,7 @@ export const works = [
     id: 'documents',
     title: '方案与文档',
     subtitle: 'Plans & Documents',
-    cover: '/assets/works/anniversary-1.png',
+    cover: '/assets/works/docs-cover.png',
     description: '活动方案、总结报告、SOP标准化文件、政府补贴申报等全流程文档体系，以规范化管理提升团队效率。',
     tags: ['活动方案', '总结报告', 'SOP标准', '补贴申报', '报价体系'],
     type: 'document',
